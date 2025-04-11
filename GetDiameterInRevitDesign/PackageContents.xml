@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ApplicationPackage SchemaVersion="1.0" AppVersion="1.0.0" ProductCode="A688A183-9145-48CC-B0FE-0438B96C5099">
-  <Components>
-    <RuntimeRequirements OS="Win64" Platform="Revit" SeriesMin="R2024" SeriesMax="R2024" />
-    <ComponentEntry AppName="BIM Speed Tools" Version="1.0.0" ModuleName="./Contents/2024/BimSpeedStructureFoundation.addin" />
-  </Components>
-</ApplicationPackage>
