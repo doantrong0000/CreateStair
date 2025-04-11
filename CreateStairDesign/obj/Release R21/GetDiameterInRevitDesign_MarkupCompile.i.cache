@@ -1,0 +1,20 @@
+﻿GetDiameterInRevitDesign
+2021.0.0.0
+
+library
+C#
+.cs
+C:\Users\bimspeed01\Documents\Trong\Navis_xungdot\GetDiameterInRevitJx\GetDiameterInRevitDesign\obj\Release R21\
+GetDiameterInRevitDesign
+none
+false
+TRACE;RELEASE;R21;Version2021;R20_OR_GREATER;R21_OR_GREATER;RELEASE_R21;NETFRAMEWORK;NET48;
+
+41686143035
+
+22124617995
+50800631751
+GetDiameterAndPatternInRevit\View\GetDiameterInRevitView.xaml;ProgressBar\ProgressBarView.xaml;Resources\ResourceString.en.xaml;Resources\ResourceString.jp.xaml;
+
+False
+

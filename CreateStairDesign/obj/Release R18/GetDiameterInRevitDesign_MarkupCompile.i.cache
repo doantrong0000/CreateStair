@@ -1,0 +1,20 @@
+﻿GetDiameterInRevitDesign
+2018.0.0.0
+
+library
+C#
+.cs
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDesign\obj\Release R18\
+GetDiameterInRevitDesign
+none
+false
+TRACE;RELEASE;R20;Version2018;R20_OR_GREATER;RELEASE_R18;NETFRAMEWORK;NET48;
+
+41686143035
+
+22-713749510
+48409591097
+GetDiameterAndPatternInRevit\View\GetDiameterInRevitView.xaml;ProgressBar\ProgressBarView.xaml;Resources\ResourceString.en.xaml;Resources\ResourceString.jp.xaml;
+
+True
+
