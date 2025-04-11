@@ -1,0 +1,6 @@
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\CreateStair\bin\Debug\CreateStair.dll
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\CreateStair\bin\Debug\CreateStair.pdb
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\CreateStair\obj\Debug\CreateStair.csproj.AssemblyReference.cache
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\CreateStair\obj\Debug\CreateStair.csproj.CoreCompileInputs.cache
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\CreateStair\obj\Debug\CreateStair.dll
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\CreateStair\obj\Debug\CreateStair.pdb

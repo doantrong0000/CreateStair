@@ -1,5 +1,8 @@
 is_global = true
 build_property.RootNamespace = Installer
-build_property.ProjectDir = D:\Bimspeed\GetDiameterInRevit\GetDiameterInRevit\Installer\
+build_property.ProjectDir = C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStair\Installer\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
