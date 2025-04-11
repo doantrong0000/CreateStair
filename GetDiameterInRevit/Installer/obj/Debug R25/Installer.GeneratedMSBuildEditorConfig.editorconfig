@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Installer
+build_property.ProjectDir = D:\Bimspeed\GetDiameterInRevit\GetDiameterInRevit\Installer\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

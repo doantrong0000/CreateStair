@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "k44rMvl6AKI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\GetDiameterInRevit\\Installer\\Installer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\bimspeed01\\.nuget\\packages\\wixsharp.bin\\1.26.0\\wixsharp.bin.1.26.0.nupkg.sha512",
+    "C:\\Users\\bimspeed01\\.nuget\\packages\\wixsharp.wix.bin\\3.14.1\\wixsharp.wix.bin.3.14.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,23 @@
+{
+  "profiles": {
+    "Build": {
+      "commandName": "Project"
+    },
+    "Revit 2022": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2022\\Revit.exe"
+    },
+    "Revit 2024": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2024\\Revit.exe"
+    },
+    "Revit 2018": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2018\\Revit.exe"
+    },
+    "Revit 2023": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2023\\Revit.exe"
+    }
+  }
+}

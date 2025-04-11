@@ -1,0 +1,68 @@
+﻿using System.Reflection;
+using System.Windows;
+using System.Windows.Media.Imaging;
+using CreateStairDesign.BimSpeedToolKit;
+using Autodesk.Revit.UI;
+using Serilog.Events;
+using CreateStairDesign.CreateStair;
+
+
+namespace CreateStairDesign
+{
+    [UsedImplicitly]
+    public class App : BimSpeedToolkitExternal
+    {
+        public override void OnStartup()
+        {
+            CreateLogger();
+            CreateRibbon();
+        }
+
+        public override void OnShutdown()
+        {
+            Log.CloseAndFlush();
+        }
+
+        private void CreateRibbon()
+        {
+            var pathIcons = "/CreateStairDesign;component/Resources/Icons/";
+
+            string tabName = "ExportRebarClash";
+
+            // Kiểm tra nếu tab chưa tồn tại thì tạo mới
+            try
+            {
+                Application.CreateRibbonTab(tabName);
+            }
+            catch
+            {
+                // Tab đã tồn tại, không cần tạo lại
+            }
+
+            RibbonPanel panel = Application.CreateRibbonPanel(tabName, "ExportRebarClash");
+
+            var getDiameter = new PushButtonData(typeof(CreateStairCmd).FullName, "Export Rebar Clash", Assembly.GetAssembly(typeof(CreateStairCmd)).Location, typeof(CreateStairCmd).FullName);
+
+            getDiameter.Image = new BitmapImage(new Uri(pathIcons + "app-16.png", UriKind.RelativeOrAbsolute));
+            getDiameter.LargeImage = new BitmapImage(new Uri(pathIcons + "app-32.png", UriKind.RelativeOrAbsolute));
+
+            panel.AddItem(getDiameter);
+
+        }
+        private static void CreateLogger()
+        {
+            const string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message:lj}{NewLine}{Exception}";
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Debug(LogEventLevel.Debug, outputTemplate)
+                .MinimumLevel.Debug()
+                .CreateLogger();
+
+            AppDomain.CurrentDomain.UnhandledException += (_, args) =>
+            {
+                var e = (Exception)args.ExceptionObject;
+                Log.Fatal(e, "Domain unhandled exception");
+            };
+        }
+    }
+}

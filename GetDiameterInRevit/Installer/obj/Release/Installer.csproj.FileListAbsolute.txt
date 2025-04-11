@@ -1,0 +1,17 @@
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\Installer.exe.config
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\Installer.exe
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\Installer.pdb
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\BootstrapperCore.dll
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\Microsoft.Deployment.WindowsInstaller.dll
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\WixSharp.Msi.dll
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\WixSharp.UI.dll
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\bin\Release\WixSharp.dll
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.csproj.AssemblyReference.cache
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.csproj.SuggestedBindingRedirects.cache
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.AssemblyInfoInputs.cache
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.AssemblyInfo.cs
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.csproj.CoreCompileInputs.cache
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.csproj.CopyComplete
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.exe
+C:\Users\user1\Documents\00.CODE\02.bs\BimSpeedFoundation\BimSpeed.Structure.Foundation\Installer\obj\Release\Installer.pdb

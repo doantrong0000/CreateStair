@@ -1,0 +1,10 @@
+﻿<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>CreateStairDesign</Name>
+		<Assembly>CreateStairDesign/CreateStairDesign.dll</Assembly>
+		<AddInId>ccfeda8a-faa9-404f-bb51-5d9f380ed565</AddInId>
+		<FullClassName>CreateStairDesign.App</FullClassName>
+		<VendorId>Development</VendorId>
+		<VendorDescription></VendorDescription>
+	</AddIn>
+</RevitAddIns>
