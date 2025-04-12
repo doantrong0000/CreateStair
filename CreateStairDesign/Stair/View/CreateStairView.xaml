@@ -60,6 +60,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition Width="98"></ColumnDefinition>
+                <ColumnDefinition Width="98"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <TextBox IsEnabled="False"
@@ -68,9 +69,13 @@
                    Grid.Column="0"></TextBox>
 
             <Button Grid.Column="1"
-                  Content="OPEN"
+                  Content="Open"
                   Margin="2"
                   Command="{Binding OpenFileCmd}"></Button>
+            <Button Grid.Column="2"
+                  Content="Run"
+                  Margin="2"
+                  Command="{Binding RunCmd}"></Button>
         </Grid>
     </Grid>
 </Window>
