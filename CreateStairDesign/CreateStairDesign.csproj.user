@@ -5,9 +5,15 @@
     <Compile Update="ProgressBar\ProgressBarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Stair\View\CreateStairView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ProgressBar\ProgressBarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Stair\View\CreateStairView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

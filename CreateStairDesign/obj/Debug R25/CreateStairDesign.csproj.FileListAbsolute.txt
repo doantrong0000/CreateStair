@@ -132,3 +132,5 @@ C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDes
 C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDesign\obj\Debug R25\CreateSt.088A7A16.Up2Date
 C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDesign\obj\Debug R25\CreateStairDesign.dll
 C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDesign\obj\Debug R25\CreateStairDesign.pdb
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDesign\obj\Debug R25\Stair\View\CreateStairView.g.cs
+C:\Users\bimspeed01\Documents\Trong\thang\CreateStair\CreateStair\CreateStairDesign\obj\Debug R25\Stair\View\CreateStairView.baml

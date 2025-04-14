@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;R25;Version2025;R25_OR_GREATER;DEBUG_R25;NETFRAMEWORK;NET48;
 
-3-564878059
+41609976243
 
-141445041667
+16-145298870
 50800631751
-ProgressBar\ProgressBarView.xaml;Resources\ResourceString.en.xaml;Resources\ResourceString.jp.xaml;
+ProgressBar\ProgressBarView.xaml;Resources\ResourceString.en.xaml;Resources\ResourceString.jp.xaml;Stair\View\CreateStairView.xaml;
 
 False
 

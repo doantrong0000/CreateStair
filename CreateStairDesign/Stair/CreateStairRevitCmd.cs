@@ -1,6 +1,8 @@
 ﻿using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using CreateStairDesign.Stair.ViewModel;
+using CreateStairDesign.Stair.View;
 
 namespace GetDiameterInRevitDesign.GetDiameterAndPatternInRevit
 {
@@ -9,18 +11,18 @@ namespace GetDiameterInRevitDesign.GetDiameterAndPatternInRevit
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            try
-            {
-                // Sử dụng TaskDialog của Revit để hiển thị thông báo.
-                TaskDialog.Show("TestTemplateCmd", "Hello from TestTemplateCmd!");
+            var uiDocument = commandData.Application.ActiveUIDocument;
 
-                return Result.Succeeded;
-            }
-            catch (Exception ex)
-            {
-                message = ex.Message;
-                return Result.Failed;
-            }
+            var viewModel = new CreateStairViewModel(uiDocument);
+
+            var view = new CreateStairView() { DataContext = viewModel };
+
+            viewModel.MainView = view;
+
+            view.ShowDialog();
+
+
+            return Result.Succeeded;
         }
     }
 }

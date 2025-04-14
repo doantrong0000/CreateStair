@@ -138,6 +138,10 @@
 		<Resource Include="Resources\setting.png" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Family\" />
+	</ItemGroup>
+
 	<Target Name="CopyFiles" AfterTargets="CoreBuild">
 		<ItemGroup>
 			<RootItem Include="$(ProjectDir)*.addin" />
