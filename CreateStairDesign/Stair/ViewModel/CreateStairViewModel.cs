@@ -4,16 +4,13 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using CommunityToolkit.Mvvm.Input;
 using CreateStairDesign.Stair.View;
-using BimSpeedUtils;
 using CreateStairDesign.Stair.Models;
 using Line = Autodesk.Revit.DB.Line;
 using RelayCommand = CommunityToolkit.Mvvm.Input.RelayCommand;
 using Autodesk.Revit.Creation;
 using Document = Autodesk.Revit.DB.Document;
-using System.Numerics;
-using Amazon.S3.Model;
 using Plane = Autodesk.Revit.DB.Plane;
-using System.Security.Cryptography;
+using CreateStairDesign.Stair.Model;
 
 namespace CreateStairDesign.Stair.ViewModel
 {
@@ -562,6 +559,7 @@ namespace CreateStairDesign.Stair.ViewModel
                 PathJson = openFileDialog.FileName;
             }
         }
+
 
     }
 }
