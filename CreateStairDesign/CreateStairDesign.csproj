@@ -99,8 +99,6 @@
 	  <PackageReference Include="Serilog" Version="3.1.1" />
 	  <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
 	  <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
-      <PackageReference Include="BimSpeedLicense" Version="$(RevitVersion).*" />
-      <PackageReference Include="BimSpeedUtils" Version="$(RevitVersion).*" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Reference Include="RevitAPI">
