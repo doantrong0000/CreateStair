@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainPrecastToolBox.StairCreator.Models
+namespace CreateStairDesign.Stair.Models
 {
    internal class StairModel
    {
