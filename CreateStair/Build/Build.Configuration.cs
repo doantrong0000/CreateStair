@@ -7,6 +7,7 @@
    {
       Configurations = new[]
       {
+            "Release R25",
             "Release R24",
             "Release R23",
             "Release R22",

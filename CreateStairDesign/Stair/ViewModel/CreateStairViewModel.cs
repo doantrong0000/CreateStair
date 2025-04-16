@@ -11,6 +11,10 @@ using Autodesk.Revit.Creation;
 using Document = Autodesk.Revit.DB.Document;
 using Plane = Autodesk.Revit.DB.Plane;
 using CreateStairDesign.Stair.Model;
+using System.Xml.Linq;
+using System.IO;
+using Autodesk.Revit.DB.Architecture;
+using System.Windows;
 
 namespace CreateStairDesign.Stair.ViewModel
 {
@@ -22,72 +26,92 @@ namespace CreateStairDesign.Stair.ViewModel
 
         public CreateStairView MainView { get; set; }
 
+
         private string path { get; set; }
-        public string PathJson
+        public string PathXml
         {
             get => path;
             set
             {
                 path = value;
-                OnPropertyChanged(nameof(PathJson));
+                OnPropertyChanged(nameof(PathXml));
             }
         }
         private List<ElementId> _createdExtrusions = new List<ElementId>();
         public Double OffsetStair3 { get; set; }
+        public XmlStair LandingXml { get; set; }
+        public XmlStair Stair1Xml { get; set; }
+        public XmlStair Stair2Xml { get; set; }
+        public XmlStair Stair3Xml { get; set; }
         public RelayCommand OpenFileCmd { get; set; }
         public RelayCommand RunCmd { get; set; }
 
         public CreateStairViewModel(Document doc)
         {
             _doc = doc;
-            OpenFileCmd = new RelayCommand(OpenFileJson);
+            OpenFileCmd = new RelayCommand(OpenFileXml);
             RunCmd = new RelayCommand(Run);
-            
+
         }
         private void Run()
         {
             MainView.Close();
+
+            ReadXmlFromPath(path);
+
             var width = 1000.0.MmToFoot();
+
+            var X1 = Stair1Xml.LowLevel.MmToFoot();
+            var Y1 = Stair1Xml.LowLevel.MmToFoot();
+            var X2 = Stair1Xml.HighLevel.MmToFoot();
+            var Y2 = Stair1Xml.HighLevel.MmToFoot();
+            var X3 = X2 + width;
+            var Y3 = Y2;
+            var X4 = X3 + (Stair2Xml.HighLevel.MmToFoot()- Stair2Xml.LowLevel.MmToFoot());
+            var Y4 = Y3 - (Stair2Xml.HighLevel.MmToFoot() - Stair2Xml.LowLevel.MmToFoot());
+            var X5 = X2 + (Stair3Xml.HighLevel.MmToFoot() - Stair3Xml.LowLevel.MmToFoot());
+            var Y5 = Y2 + (Stair3Xml.HighLevel.MmToFoot() - Stair3Xml.LowLevel.MmToFoot());
+
             var stairModel = new StairModel()
             {
                 Step1 = new StepModel()
                 {
-                    Thickness = 100.0.MmToFoot(),
-                    StartLevel = 0,
-                    EndLevel = 2000.MmToFoot(),
-                    StepNumber = 6,
-                    Start = new XYZ(-2115.5824587448105.MmToFoot(), 0.MmToFoot(), -918.07689499975186.MmToFoot()),
-                    End = new XYZ(-115.58245874481645.MmToFoot(), 0.MmToFoot(), 81.92310500025998.MmToFoot()),
+                    Thickness = Stair1Xml.Thickness.MmToFoot(),
+                    StartLevel = Stair1Xml.LowLevel.MmToFoot(),
+                    EndLevel = Stair1Xml.HighLevel.MmToFoot(),
+                    StepNumber = Stair1Xml.StepNumber,
+                    Start = new XYZ(X1, 0, Y1),
+                    End = new XYZ(X2,0, Y2),
                     StepWidth = width,
                 },
                 Step2 = new StepModel()
-                   {
-                    Thickness = 100.0.MmToFoot(),
-                    StartLevel = 0,
-                    EndLevel = 2000.MmToFoot(),
-                    StepNumber = 4,
-                    Start = new XYZ(1384.4175412551836.MmToFoot(), 0.MmToFoot(), 81.92310500025998.MmToFoot()),
-                    End = new XYZ(2884.4175412551895.MmToFoot(), 0, -918.07689499975254.MmToFoot()),
+                {
+                    Thickness = Stair2Xml.Thickness.MmToFoot(),
+                    StartLevel =Stair2Xml.LowLevel.MmToFoot(),
+                    EndLevel = Stair2Xml.HighLevel.MmToFoot(),
+                    StepNumber = Stair2Xml.StepNumber,
+                    Start = new XYZ(X3,0,Y3),
+                    End = new XYZ(X4, 0, Y4),
                     StepWidth = width,
-                   },
-                   Step3 = new StepModel()
-                 {
-                    Thickness = 100.0.MmToFoot(),
-                    StartLevel = 0,
-                    EndLevel = 2000.MmToFoot(),
-                    StepNumber = 4,
-                    Start = new XYZ(0.MmToFoot(), -115.58245874481645.MmToFoot(), 81.92310500025998.MmToFoot()),
-                    End = new XYZ(0.MmToFoot(), 1384.4175412551836.MmToFoot(), 1581.9231050002504.MmToFoot()),
-                 },
+                },
+                Step3 = new StepModel()
+                {
+                    Thickness = Stair3Xml.Thickness.MmToFoot(),
+                    StartLevel = Stair3Xml.LowLevel.MmToFoot(),
+                    EndLevel = Stair3Xml.HighLevel.MmToFoot(),
+                    StepNumber = Stair3Xml.StepNumber,
+                    Start = new XYZ(0,X2,Y2),
+                    End = new XYZ(0, X5, Y5),
+                },
                 Landing = new LandingModel()
                 {
-                    Thickness = 300.0.MmToFoot(),
-                    Width = 1000.0.MmToFoot(),
+                    Thickness = LandingXml.Thickness.MmToFoot(),
+                    Width =width,
                 }
-            }; 
-            stairModel.Landing.Start = stairModel.Step1.End;
-            stairModel.Landing.End = stairModel.Step2.Start;
-            stairModel.Landing.Length = Math.Abs(stairModel.Step1.End.X - stairModel.Step2.Start.X);
+            };
+            stairModel.Landing.Start = new XYZ(X2,0,Y2);
+            stairModel.Landing.End = new XYZ(X3, 0, Y3);
+            stairModel.Landing.Length = Math.Abs(width);
             stairModel.Step3.StepWidth = stairModel.Landing.Length;
             XYZ vectoStep3 = stairModel.Step1.End - stairModel.Step3.Start;
             OffsetStair3 = width;
@@ -103,117 +127,27 @@ namespace CreateStairDesign.Stair.ViewModel
                 _doc.Regenerate();
                 CombinableElementArray combineArray = new CombinableElementArray();
 
-                foreach (ElementId id in _createdExtrusions)
+                if (_createdExtrusions.Count < 2)
                 {
-                    Element e = _doc.GetElement(id);
-                    if (e is CombinableElement combinable)
-                    {
-                        combineArray.Append(combinable);
-                    }
+                 
                 }
-                _doc.CombineElements(combineArray);
-             
-                _doc.Regenerate();
+                else
+                {
+                    foreach (ElementId id in _createdExtrusions)
+                    {
+                        Element e = _doc.GetElement(id);
+                        if (e is CombinableElement combinable)
+                        {
+                            combineArray.Append(combinable);
+                        }
+                    }
+                    _doc.CombineElements(combineArray);
+
+                }
+
                 tx.Commit();
             }
         }
-        #region test
-        //private void CreateModelStair(StepModel Model)
-        //{
-
-        //    var BoundStair = CreateLineStair(Model);
-        //    Model.Curves = BoundStair;
-        //    CreatePathStair(Model);
-
-
-        //    var familyDoc = _doc;
-
-        //    FamilyItemFactory factory = familyDoc.FamilyCreate;
-
-        //    // Tạo mặt phẳng sketch
-        //    XYZ origin = XYZ.Zero;
-        //    XYZ normal = XYZ.BasisY;
-        //    Plane plane = Plane.CreateByNormalAndOrigin(normal, origin);
-        //    SketchPlane sketchPlane = SketchPlane.Create(familyDoc, plane);
-
-        //    // Chiều cao extrusion
-        //    double extrusionHeight = Model.StepWidth;
-        //    bool isSolid = true;
-
-        //    CurveArrArray profile = new CurveArrArray();
-        //    CurveArray curveArray = new CurveArray();
-
-        //    foreach (var line in Model.Curves)
-        //    {
-        //        ModelCurve modelCurve = _doc.FamilyCreate.NewModelCurve(line, sketchPlane);
-        //        curveArray.Append(line);
-
-        //    }
-        //    profile.Append(curveArray);
-
-        //    Extrusion extrusion = _doc.FamilyCreate.NewExtrusion(
-        //        true,             // true = khối đặc
-        //        profile,
-        //        sketchPlane,
-        //        extrusionHeight     // chiều cao đùn lên
-        //    );
-
-        //    double offsetX = Model.StepWidth / 2.0;
-        //    XYZ translationVector = new XYZ(offsetX, 0, 0);
-        //    Curve movedCurve = Model.Path.CreateTransformed(Transform.CreateTranslation(translationVector));
-        //    ModelCurve modelCurve2 = _doc.FamilyCreate.NewModelCurve(movedCurve, sketchPlane);
-
-        //    //var combine = new CombinableElementArray();
-        //    //combine.Append(e1);
-        //    //combine.Append(e2);
-        //    //AC.Document.CombineElements(combine);
-        //}
-
-        //private List<Line> CreateLineStair(StepModel Model)
-        //{
-        //    List<Line> lines = new List<Line>();
-        //    List<XYZ> points = new List<XYZ>();
-
-        //    var l = (Model.End.X - Model.Start.X) / (Model.StepNumber - 1); // chiều ngang
-        //    var h = (Model.End.Z - Model.Start.Z) / Model.StepNumber;       // chiều cao
-
-        //    double offsetZ = CalculateValueSinByAngle(48, Model.Thickness);
-
-        //    // Điểm bắt đầu dưới góc trái
-        //    XYZ PointStart = Model.Start - new XYZ(0, 0, offsetZ); // offset theo Z
-        //    points.Add(PointStart);
-
-        //    // Điểm đầu thang
-        //    XYZ currentPoint = Model.Start;
-        //    points.Add(currentPoint);
-
-        //    for (int i = 0; i < Model.StepNumber; i++)
-        //    {
-        //        // Lên theo Z
-        //        currentPoint = new XYZ(currentPoint.X, currentPoint.Y, currentPoint.Z + h);
-        //        points.Add(currentPoint);
-
-        //        // Tiến theo X
-        //        currentPoint = new XYZ(currentPoint.X + l, currentPoint.Y, currentPoint.Z);
-        //        points.Add(currentPoint);
-        //    }
-
-        //    XYZ lastPoint = points.Last();
-        //    double offsetX = CalculateValueCosByAngle(48, Model.Thickness);
-        //    XYZ PointEnd = lastPoint + new XYZ(offsetX, 0, 0); // dịch theo X
-        //    points.Add(PointEnd);
-
-        //    List<XYZ> sortedPoints = points; // không cần sắp xếp lại
-
-        //    for (int i = 0; i < sortedPoints.Count - 1; i++)
-        //    {
-        //        lines.Add(Line.CreateBound(sortedPoints[i], sortedPoints[i + 1]));
-        //    }
-        //    lines.Add(Line.CreateBound(points.Last(), points.First()));
-
-        //    return lines;
-        //}
-        #endregion
         private void CreateLanding(LandingModel Model)
         {
             var BoundStair = CreateLineLanding(Model);
@@ -266,7 +200,7 @@ namespace CreateStairDesign.Stair.ViewModel
             List<XYZ> points = new List<XYZ>();
 
             points.Add(Model.Start);
-            XYZ P2 = new XYZ(Model.Start.X , Model.Start.Y, Model.Start.Z - Model.Thickness);
+            XYZ P2 = new XYZ(Model.Start.X, Model.Start.Y, Model.Start.Z - Model.Thickness);
             points.Add(P2);
             XYZ P3 = new XYZ(Model.Start.X + Model.Length, Model.Start.Y, Model.Start.Z - Model.Thickness);
             points.Add(P3);
@@ -285,7 +219,7 @@ namespace CreateStairDesign.Stair.ViewModel
         {
             var BoundStair = CreateLineStair(Model);
             Model.Curves = BoundStair;
-            Model.Path= CreatePathStair(Model);
+            Model.Path = CreatePathStair(Model);
 
             var familyDoc = _doc;
             FamilyItemFactory factory = familyDoc.FamilyCreate;
@@ -332,7 +266,7 @@ namespace CreateStairDesign.Stair.ViewModel
 
             profile.Append(curveArray);
 
-           
+
             Extrusion extrusion = _doc.FamilyCreate.NewExtrusion(
                 isSolid,
                 profile,
@@ -372,10 +306,10 @@ namespace CreateStairDesign.Stair.ViewModel
             ModelCurve modelCurve2 = _doc.FamilyCreate.NewModelCurve(movedPath, movedSketchPlane);
             if (vector != null)
             {
-                    vector = vector + new XYZ(0, OffsetStair3, 0);
-                    ElementTransformUtils.MoveElement(_doc, extrusion.Id, vector);
-                    ElementTransformUtils.MoveElement(_doc, modelCurve2.Id, vector);
-          
+                vector = vector + new XYZ(0, OffsetStair3, 0);
+                ElementTransformUtils.MoveElement(_doc, extrusion.Id, vector);
+                ElementTransformUtils.MoveElement(_doc, modelCurve2.Id, vector);
+
             }
             foreach (var id in tempCurveIds)
             {
@@ -442,7 +376,7 @@ namespace CreateStairDesign.Stair.ViewModel
                         points.Add(currentPoint);
 
                         currentPoint = new XYZ(currentPoint.X, currentPoint.Y, currentPoint.Z + h);
-                        points.Add(currentPoint);  
+                        points.Add(currentPoint);
                     }
 
                     XYZ lastPoint = points.Last();
@@ -543,12 +477,12 @@ namespace CreateStairDesign.Stair.ViewModel
             double angleRad = angleDeg * Math.PI / 180.0; // Đổi sang radian
             return thickness / Math.Cos(angleRad);
         }
-        private void OpenFileJson()
+        private void OpenFileXml()
         {
             System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog();
 
-            openFileDialog.Filter = @"JSON files (*.json)|*.json|All files (*.*)|*.*";
-            openFileDialog.Title = @"Open JSON File";
+            openFileDialog.Filter = "XML files (*.xml)|*.xml";
+            openFileDialog.Title = "Open XML File";
 
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -556,10 +490,118 @@ namespace CreateStairDesign.Stair.ViewModel
 
             if (result == DialogResult.OK)
             {
-                PathJson = openFileDialog.FileName;
+                PathXml = openFileDialog.FileName; // Nếu bạn muốn, đổi tên thành PathXml cho đúng ngữ nghĩa
             }
         }
 
+        private void ReadXmlFromPath(string xmlPath)
+        {
+            XDocument xdoc = XDocument.Load(xmlPath);
+            var targetCompo = xdoc.Descendants("XMLCompoG")
+            .Where(g =>
+                g.Attribute(XName.Get("type", "http://www.w3.org/2001/XMLSchema-instance"))?.Value == "XMLStairG" &&
+                g.Descendants("XMLStairLandingG").Count() == 1 &&
+                g.Descendants("XMLStairStepRunG").Count() == 3
+            )
+            .ToList();
+
+            XElement landing = targetCompo
+      .Descendants("XMLStairLandingG")
+      .FirstOrDefault(x =>
+          x.Element("Thick") != null &&
+          x.Element("Level") != null &&
+          x.Element("StartLevel") == null);
+
+
+            if (landing != null)
+            {
+                int id = int.Parse(landing.Element("ID")?.Value ?? "0");
+                double level = double.Parse(landing.Element("Level")?.Value ?? "0");
+                double thick = double.Parse(landing.Element("Thick")?.Value ?? "0");
+
+                LandingXml = new XmlStair
+                {
+                    ID = id,
+                    LowLevel = level - thick,
+                    HighLevel = level,
+                    Thickness = thick,
+                    StepNumber = 0,
+                    Type = StairType.Landing
+                };
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("❌ Không tìm thấy Landing.");
+            }
+
+            var stairs = targetCompo.Descendants("XMLStairStepRunG")
+        .Select(x => new
+        {
+            Element = x,
+            ID = int.Parse(x.Element("ID")?.Value ?? "0"),
+            StartLevel = double.Parse(x.Element("StartLevel")?.Value ?? "0"),
+            EndLevel = double.Parse(x.Element("EndLevel")?.Value ?? "0"),
+            Thick = double.Parse(x.Element("Thick")?.Value ?? "0"),
+            StepNum = int.Parse(x.Element("StepsNum")?.Value ?? "0")
+        })
+        .ToList();
+
+            var stair1 = stairs.OrderBy(s => s.EndLevel).FirstOrDefault();
+            Stair1Xml = new XmlStair
+            {
+                ID = stair1.ID,
+                LowLevel = stair1.StartLevel,
+                HighLevel = stair1.EndLevel,
+                Thickness = stair1.Thick,
+                StepNumber = stair1.StepNum,
+                Type = StairType.Stair
+            };
+            var stair2 = stairs.FirstOrDefault(s =>
+                        s.ID != stair1.ID &&
+                        Math.Abs(s.EndLevel - stair1.EndLevel) < 1e-6);
+
+            Stair2Xml = new XmlStair
+            {
+                ID = stair2.ID,
+                LowLevel = stair2.StartLevel,
+                HighLevel = stair2.EndLevel,
+                Thickness = stair2.Thick,
+                StepNumber = stair2.StepNum,
+                Type = StairType.Stair
+            };
+            var stair3 = stairs
+                        .Where(s => s.ID != stair1.ID && s.ID != (stair2?.ID ?? -1))
+                        .FirstOrDefault(s => s.EndLevel > stair1.EndLevel);
+            Stair3Xml = new XmlStair
+            {
+                ID = stair3.ID,
+                LowLevel = stair3.StartLevel,
+                HighLevel = stair3.EndLevel,
+                Thickness = stair3.Thick,
+                StepNumber = stair3.StepNum,
+                Type = StairType.Stair
+            };
+            if (Stair1Xml == null || Stair2Xml == null || Stair3Xml == null)
+            {
+                System.Windows.MessageBox.Show("❌ Không tìm thấy Stair.");
+            }
+
+            if (LandingXml != null && Stair1Xml != null && Stair2Xml != null && Stair3Xml != null)
+            {
+                string result =
+                    "✅ Landing:\n" + LandingXml + "\n\n" +
+                    "🟦 Stair 1:\n" + Stair1Xml + "\n\n" +
+                    "🟩 Stair 2:\n" + Stair2Xml + "\n\n" +
+                    "🟥 Stair 3:\n" + Stair3Xml;
+
+                System.Windows.MessageBox.Show(result, "Thông tin thang & sàn nghỉ", (MessageBoxButton)MessageBoxButtons.OK, (MessageBoxImage)MessageBoxIcon.Information);
+            }
+            else
+            {
+                System.Windows.MessageBox.Show("❌ Không đầy đủ dữ liệu Landing hoặc Stair.", "Lỗi", (MessageBoxButton)MessageBoxButtons.OK, (MessageBoxImage)MessageBoxIcon.Warning);
+            }
+        }
 
     }
+
 }

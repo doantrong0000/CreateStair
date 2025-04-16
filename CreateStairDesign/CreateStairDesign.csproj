@@ -71,27 +71,6 @@
 		<StartArguments>/language ENG</StartArguments>
 	</PropertyGroup>
 	<ItemGroup>
-		<None Remove="icons\close.png" />
-		<None Remove="icons\save.png" />
-		<None Remove="Resources\Icons\about.png" />
-		<None Remove="Resources\Icons\about16.png" />
-		<None Remove="Resources\Icons\app-16.png" />
-		<None Remove="Resources\Icons\app-32.png" />
-		<None Remove="Resources\Icons\foundationrebar.png" />
-		<None Remove="Resources\Icons\foundationrebar16.png" />
-		<None Remove="Resources\Icons\help.png" />
-		<None Remove="Resources\Icons\help16.png" />
-		<None Remove="Resources\Icons\login.png" />
-		<None Remove="Resources\Icons\login16.png" />
-		<None Remove="Resources\Icons\sideplandim.png" />
-		<None Remove="Resources\Icons\sideplandim16.png" />
-		<None Remove="Resources\Icons\stripfooting.png" />
-		<None Remove="Resources\Icons\stripfooting16.png" />
-		<None Remove="Resources\Icons\stripfootingdrawing.png" />
-		<None Remove="Resources\Icons\stripfootingdrawing16.png" />
-		<None Remove="Resources\setting.png" />
-	</ItemGroup>
-	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 	  <PackageReference Include="Extended.Wpf.Toolkit" Version="4.6.0" />
 	  <PackageReference Include="JetBrains.Annotations" Version="2023.3.0" />
@@ -111,35 +90,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<!--<Using Include="Nice3point.Revit.Extensions" />
-		<Using Include="Nice3point.Revit.Toolkit.Utils" />-->
 		<Using Include="JetBrains.Annotations" />
 		<Using Include="Serilog" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Resource Include="Resources\Icons\about.png" />
-		<Resource Include="Resources\Icons\about16.png" />
-		<Resource Include="Resources\Icons\app-16.png" />
-		<Resource Include="Resources\Icons\app-32.png" />
-		<Resource Include="Resources\Icons\foundationrebar.png" />
-		<Resource Include="Resources\Icons\foundationrebar16.png" />
-		<Resource Include="Resources\Icons\help.png" />
-		<Resource Include="Resources\Icons\help16.png" />
-		<Resource Include="Resources\Icons\login.png" />
-		<Resource Include="Resources\Icons\login16.png" />
-		<Resource Include="Resources\Icons\sideplandim.png" />
-		<Resource Include="Resources\Icons\sideplandim16.png" />
-		<Resource Include="Resources\Icons\stripfooting.png" />
-		<Resource Include="Resources\Icons\stripfooting16.png" />
-		<Resource Include="Resources\Icons\stripfootingdrawing.png" />
-		<Resource Include="Resources\Icons\stripfootingdrawing16.png" />
-		<Resource Include="Resources\setting.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Family\" />
-	  <Folder Include="Utils\" />
 	</ItemGroup>
 
 	<Target Name="CopyFiles" AfterTargets="CoreBuild">
@@ -162,10 +114,6 @@
 
 		<!--<Copy SourceFiles="@(AddinFiles)" DestinationFolder="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\%(RecursiveDir)" />-->
 
-		<ItemGroup>
-			<ProjectDll Include="$(TargetDir)$(AssemblyName)*.dll" />
-		</ItemGroup>
-
 
 
 		<!--<Copy SourceFiles="@(ProjectDll)" DestinationFolder="$(AppData)\BimSpeedApp\PluginStructures\$(ProjectName)\$(RevitVersion)" Condition="$(Configuration.Contains('Debug'))" />
@@ -178,9 +126,9 @@
 
 	</Target>
 
-	<Target Name="DeleteFiles" AfterTargets="Clean">
+	<!--<Target Name="DeleteFiles" AfterTargets="Clean">
 		<RemoveDir Directories="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\$(ProjectName)" />
 		<Delete Files="$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)\$(ProjectName).addin" />
-	</Target>
+	</Target>-->
 
 </Project>
