@@ -65,7 +65,7 @@
 
             <TextBox IsEnabled="False"
                     VerticalContentAlignment="Center"
-                    Text="{Binding PathJson}"
+                    Text="{Binding PathXml}"
                    Grid.Column="0"></TextBox>
 
             <Button Grid.Column="1"

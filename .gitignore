@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+*.user
+*.suo
+*.lock.json
+launchSettings.json
+
+*.cs text eol=lf

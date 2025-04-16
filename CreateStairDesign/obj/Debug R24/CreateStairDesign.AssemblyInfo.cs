@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CreateStairDesign")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug R24")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("2024.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2024+d7942efa37481b66d67099bca1453c288c552223")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("2024+0195b0eb866e688de9b5cfe9c90e3e7383ea44b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CreateStairDesign")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CreateStairDesign")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2024.0.0.0")]
