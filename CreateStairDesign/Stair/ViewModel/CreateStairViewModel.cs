@@ -22,6 +22,7 @@ namespace CreateStairDesign.Stair.ViewModel
 
         public CreateStairView MainView { get; set; }
 
+
         private string path { get; set; }
         public string PathJson
         {
@@ -34,6 +35,8 @@ namespace CreateStairDesign.Stair.ViewModel
         }
         private List<ElementId> _createdExtrusions = new List<ElementId>();
         public Double OffsetStair3 { get; set; }
+
+
         public RelayCommand OpenFileCmd { get; set; }
         public RelayCommand RunCmd { get; set; }
 
@@ -55,7 +58,7 @@ namespace CreateStairDesign.Stair.ViewModel
                     Thickness = 100.0.MmToFoot(),
                     StartLevel = 0,
                     EndLevel = 2000.MmToFoot(),
-                    StepNumber = 6,
+                    StepNumber = 10,
                     Start = new XYZ(-2115.5824587448105.MmToFoot(), 0.MmToFoot(), -918.07689499975186.MmToFoot()),
                     End = new XYZ(-115.58245874481645.MmToFoot(), 0.MmToFoot(), 81.92310500025998.MmToFoot()),
                     StepWidth = width,
@@ -65,8 +68,8 @@ namespace CreateStairDesign.Stair.ViewModel
                     Thickness = 100.0.MmToFoot(),
                     StartLevel = 0,
                     EndLevel = 2000.MmToFoot(),
-                    StepNumber = 4,
-                    Start = new XYZ(1384.4175412551836.MmToFoot(), 0.MmToFoot(), 81.92310500025998.MmToFoot()),
+                    StepNumber = 5,
+                    Start = new XYZ(1584.4175412551836.MmToFoot(), 0.MmToFoot(), 81.92310500025998.MmToFoot()),
                     End = new XYZ(2884.4175412551895.MmToFoot(), 0, -918.07689499975254.MmToFoot()),
                     StepWidth = width,
                    },
@@ -75,7 +78,7 @@ namespace CreateStairDesign.Stair.ViewModel
                     Thickness = 100.0.MmToFoot(),
                     StartLevel = 0,
                     EndLevel = 2000.MmToFoot(),
-                    StepNumber = 4,
+                    StepNumber = 6,
                     Start = new XYZ(0.MmToFoot(), -115.58245874481645.MmToFoot(), 81.92310500025998.MmToFoot()),
                     End = new XYZ(0.MmToFoot(), 1384.4175412551836.MmToFoot(), 1581.9231050002504.MmToFoot()),
                  },

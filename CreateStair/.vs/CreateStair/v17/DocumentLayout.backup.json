@@ -3,6 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStair\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\createstairdesign.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\stair\\view\\createstairview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\createstairdesign.addin||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\packagecontents.xml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\stair\\createstairrevitcmd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\bimspeedtoolkit\\resolvehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\bimspeedtoolkit\\bimspeedtoolkitexternal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6CBD2FC9-32E3-40F2-B670-4614E0B79100}|..\\CreateStairDesign\\CreateStairDesign.csproj|c:\\users\\bimspeed01\\documents\\trong\\thang\\createstair\\createstair\\createstairdesign\\stair\\viewmodel\\createstairviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -25,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,7 +66,97 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateStairDesign.addin",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\CreateStairDesign.addin",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\CreateStairDesign.addin",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\CreateStairDesign.addin",
+              "RelativeToolTip": "..\\CreateStairDesign\\CreateStairDesign.addin",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000072|",
+              "WhenOpened": "2025-04-16T01:31:51.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PackageContents.xml",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\PackageContents.xml",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\PackageContents.xml",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\PackageContents.xml",
+              "RelativeToolTip": "..\\CreateStairDesign\\PackageContents.xml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2025-04-16T01:31:49.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateStairRevitCmd.cs",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\CreateStairRevitCmd.cs",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\CreateStairRevitCmd.cs",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\CreateStairRevitCmd.cs",
+              "RelativeToolTip": "..\\CreateStairDesign\\Stair\\CreateStairRevitCmd.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T01:31:42.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResolveHelper.cs",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\BimSpeedToolKit\\ResolveHelper.cs",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\BimSpeedToolKit\\ResolveHelper.cs",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\BimSpeedToolKit\\ResolveHelper.cs",
+              "RelativeToolTip": "..\\CreateStairDesign\\BimSpeedToolKit\\ResolveHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T01:31:33.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CreateStairView.xaml",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\View\\CreateStairView.xaml",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\View\\CreateStairView.xaml",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\View\\CreateStairView.xaml",
+              "RelativeToolTip": "..\\CreateStairDesign\\Stair\\View\\CreateStairView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-16T01:12:43.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateStairDesign",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\CreateStairDesign.csproj",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\CreateStairDesign.csproj",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\CreateStairDesign.csproj*",
+              "RelativeToolTip": "..\\CreateStairDesign\\CreateStairDesign.csproj*",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAHIAAACCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-16T01:30:43.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BimSpeedToolkitExternal.cs",
+              "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\BimSpeedToolKit\\BimSpeedToolkitExternal.cs",
+              "RelativeDocumentMoniker": "..\\CreateStairDesign\\BimSpeedToolKit\\BimSpeedToolkitExternal.cs",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\BimSpeedToolKit\\BimSpeedToolkitExternal.cs",
+              "RelativeToolTip": "..\\CreateStairDesign\\BimSpeedToolKit\\BimSpeedToolkitExternal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T01:31:31.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "UnitConverter.cs",
               "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\Model\\UnitConverter.cs",
               "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\Model\\UnitConverter.cs",
@@ -53,12 +164,11 @@
               "RelativeToolTip": "..\\CreateStairDesign\\Stair\\Model\\UnitConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T10:32:58.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T10:32:58.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "LandingModel.cs",
               "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\Model\\LandingModel.cs",
               "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\Model\\LandingModel.cs",
@@ -70,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "StairModel.cs",
               "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\Model\\StairModel.cs",
               "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\Model\\StairModel.cs",
@@ -82,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "StepModel.cs",
               "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\Model\\StepModel.cs",
               "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\Model\\StepModel.cs",
@@ -94,13 +204,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "CreateStairViewModel.cs",
               "DocumentMoniker": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\ViewModel\\CreateStairViewModel.cs",
               "RelativeDocumentMoniker": "..\\CreateStairDesign\\Stair\\ViewModel\\CreateStairViewModel.cs",
-              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\ViewModel\\CreateStairViewModel.cs",
-              "RelativeToolTip": "..\\CreateStairDesign\\Stair\\ViewModel\\CreateStairViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\bimspeed01\\Documents\\Trong\\thang\\CreateStair\\CreateStair\\CreateStairDesign\\Stair\\ViewModel\\CreateStairViewModel.cs*",
+              "RelativeToolTip": "..\\CreateStairDesign\\Stair\\ViewModel\\CreateStairViewModel.cs*",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAkwCQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-15T01:19:18.818Z",
               "EditorCaption": ""
